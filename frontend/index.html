@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System</title>
+    <!--<link rel="stylesheet" href="styles.css"> --->
+</head>
+<body>
+    <div id="auth-section">
+        <h2>Signup</h2>
+        <input type="text" id="signup-username" placeholder="Username">
+        <input type="password" id="signup-password" placeholder="Password">
+        <select id="signup-role">
+            <option value="MEMBER">Member</option>
+            <option value="LIBRARIAN">Librarian</option>
+        </select>
+        <button onclick="signup()">Signup</button>
+
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Username">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="librarian-section" >
+        <h2>Librarian Dashboard</h2>
+        <div id="book-management">
+            <h3>Manage Books</h3>
+            <ul id="booksInLibrary"></ul>
+            <input type="text" id="book-Id" placeholder="ID">
+            <input type="text" id="book-title" placeholder="Title">
+            <input type="text" id="book-author" placeholder="Author">
+            <button onclick="loadBooksForLibrarian()">Show Book</button>
+            <button onclick="addBook()">Add Book</button>
+            <button onclick="updateBook()">Update Book</button>
+            <button onclick="deleteBook()">Delete Book</button>
+        </div>
+        <div id="member-management">
+            <h3>Manage Members</h3>
+            <ul id="members"></ul>
+            <button onclick="showMember()">Show Member</button>
+            <button onclick="addMember()">Add Member</button>
+            <button onclick="updateMember()">Update Member</button>
+            <button onclick="deleteMember()">Delete Member</button>
+        </div>
+    </div>
+
+    <div id="member-section" >
+        <h2>Member Dashboard</h2>
+        <div id="book-list">
+            <h3>Available Books</h3>
+            <ul id="books"></ul>
+            <button onclick="loadBooks()">Show Book</button>
+            <button onclick="borrowBook()">Borrow Book</button>
+            <button onclick="returnBook()">Return Book</button>
+            <button onclick="deleteAccount()">Delete Account</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
